@@ -41,7 +41,7 @@ export default function CityHomeCard({ city }: CityHomeCardProps) {
                 <h3 className="text-lg font-bold text-[#2B2B2B] group-hover:text-[#3E5EC0] transition-colors duration-300">
                   {city.title}
                   <span className="block text-xs font-normal text-[#7C7B7B] mt-1">
-                    +{courseCount} course
+                    +{courseCount} دورة
                   </span>
                 </h3>
               </div>

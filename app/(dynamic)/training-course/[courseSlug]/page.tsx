@@ -128,7 +128,7 @@ export default async function Page({
     },
     {
       href: "/training-courses",
-      label: "الفئات",
+      label: "التخصصات",
     },
     {
       href: `/training-courses/${course.category.slug}`,
@@ -237,7 +237,7 @@ export default async function Page({
         <HeroBanner
           backgroundImage={"/assets/images/hero-course.webp"}
           title={course.h1 || course.title}
-          description={course.description || "جاري تحميل تفاصيل الكورس..."}
+          description={course.description || "جاري تحميل تفاصيل الدورة..."}
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
           typewriterSpeed={100}
@@ -248,11 +248,11 @@ export default async function Page({
       {/* Main content with semantic HTML */}
       <main>
         <Container>
-          <section aria-label="جدول الكورس والتواريخ">
+          <section aria-label="جدول الدورة والتواريخ">
             <CourseTimings course={course} timings={timings} />
           </section>
           
-          <section aria-label="محتوى وتفاصيل الكورس">
+          <section aria-label="محتوى وتفاصيل الدورة">
             <CourseContent course={course} />
           </section>
         </Container>

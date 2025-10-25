@@ -26,7 +26,7 @@ export default function CategorySection({
   return (
     <>
       {/* Course Search - Client Component */}
-      <SearchInput placeholder="ابحث عن كورس" />
+      <SearchInput placeholder="ابحث عن دورة" />
 
       {/* Courses List */}
       <CoursesList filteredCourses={filteredCourses} />

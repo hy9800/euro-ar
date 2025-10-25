@@ -32,7 +32,7 @@ export const popularCategories = [
 
 export const quickAccessLinks = [
   { href: "/", label: "الرئيسية" },
-  { href: "/training-courses", label: "الفئات" },
+  { href: "/training-courses", label: "التخصصات" },
   { href: "/about", label: "من نحن" },
   { href: "/blogs", label: "المدونات" },
   { href: "/sitemap", label: "خريطة الموقع" },

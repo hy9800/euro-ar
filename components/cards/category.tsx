@@ -30,7 +30,7 @@ export default function CategoryCard({ category }: { category: Category }) {
       {/* Category Footer */}
       <div className="flex items-center justify-between p-2 px-4 bg-white border-t border-[rgba(226,232,240,0.8)]">
         <span className="text-[#718096] font-medium text-xs flex items-center gap-1.5">
-          {category.courses_count}+ كورس
+          {category.courses_count}+ دورة
         </span>
         <div className="w-10 h-10 rounded-[10px] bg-gradient-to-br from-[#f7fafc] to-[#edf2f7] text-[#667eea] flex items-center justify-center transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden border-2 border-transparent">
           <ArrowLeft

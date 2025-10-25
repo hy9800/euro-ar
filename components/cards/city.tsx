@@ -31,7 +31,7 @@ export default function CityCard({ city }: CityCardProps) {
           </h3>
           {city.courses_count && (
             <span className="text-sm font-semibold">
-              +{city.courses_count} كورس
+              +{city.courses_count} دورة
             </span>
           )}
         </div>

@@ -8,7 +8,7 @@ import Schema from "@/components/shared/schema";
 export const metadata: Metadata = {
   title: "خريطة الموقع | الدول التدريبية العالمية",
   description:
-    "خريطة موقع كاملة لدورات التدريب، الفئات، المدن، وجميع الصفحات المتاحة في الدول التدريبية العالمية.",
+    "خريطة موقع كاملة لدورات التدريب، التخصصات، المدن، وجميع الصفحات المتاحة في الدول التدريبية العالمية.",
   // robots: "noindex, nofollow",
 };
 
@@ -39,14 +39,14 @@ export default async function SitemapPage() {
       <Schema 
         pageType="sitemap"
         pageTitle="Sitemap | الدول التدريبية العالمية"
-        pageDescription="خريطة موقع كاملة لدورات التدريب، الفئات، المدن، وجميع الصفحات المتاحة في الدول التدريبية العالمية."
+        pageDescription="خريطة موقع كاملة لدورات التدريب، التخصصات، المدن، وجميع الصفحات المتاحة في الدول التدريبية العالمية."
         pageUrl="https://euroqst.com/sitemap"
       />
       {/* Hero Banner */}
       <HeroBanner
         backgroundImage="/assets/images/hero-sitemap.png"
         title="Sitemap"
-        description="خريطة موقع كاملة لدورات التدريب، الفئات، المدن، وجميع الصفحات المتاحة في الدول التدريبية العالمية."
+        description="خريطة موقع كاملة لدورات التدريب، التخصصات، المدن، وجميع الصفحات المتاحة في الدول التدريبية العالمية."
         breadcrumbs={breadcrumbs}
         enableTypewriter={true}
         typewriterSpeed={100}
@@ -79,7 +79,7 @@ export default async function SitemapPage() {
                       href="/training-courses"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      الفئات التدريبية
+                      التخصصات التدريبية
                     </a>
                   </li>
                   <li>
@@ -154,7 +154,7 @@ export default async function SitemapPage() {
               <div className="absolute left-0 top-0 w-14 h-full bg-teal-50 -z-10 hidden md:block"></div>
 
               <h2 className="text-4xl font-semibold ml-0 md:ml-10">
-                الفئات التدريبية
+                التخصصات التدريبية
               </h2>
 
               <div className="ml-0 md:ml-28 grid grid-cols-1 md:grid-cols-2 gap-2 max-w-4xl">
@@ -221,7 +221,7 @@ export default async function SitemapPage() {
                   <div className="absolute left-0 top-0 w-14 h-full bg-green-50 -z-10 hidden md:block"></div>
 
                   <h2 className="text-4xl font-semibold ml-0 md:ml-10">
-                    ترابطات المدن والفئات التدريبية
+                    ترابطات المدن والتخصصات التدريبية
                   </h2>
 
                   <div className="ml-0 md:ml-28 space-y-8 max-w-4xl">

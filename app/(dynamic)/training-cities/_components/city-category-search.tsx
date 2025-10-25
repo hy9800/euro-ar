@@ -55,11 +55,11 @@ export default function CityCategorySearch() {
         />
         <input
           type="search"
-          placeholder="ابحث عن كورس"
+          placeholder="ابحث عن دورة"
           value={searchKeyword}
           onChange={(e) => setSearchKeyword(e.target.value)}
           className="border-none outline-none w-full text-sm bg-transparent text-gray-800 font-normal placeholder:text-gray-500 placeholder:font-normal"
-          aria-label="ابحث عن كورس"
+          aria-label="ابحث عن دورة"
           autoComplete="off"
         />
         {searchKeyword && (

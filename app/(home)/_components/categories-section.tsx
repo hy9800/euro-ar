@@ -6,8 +6,8 @@ export default function CategoriesSection({
   categories,
   title = "جميع",
   citySlug,
-  highlight = "الفئات",
-  description = "الفئات التدريبية لتعزيز المهارات والأداء",
+  highlight = "التخصصات",
+  description = "التخصصات التدريبية لتعزيز المهارات والأداء",
 }: {
   categories: Category[];
   title?: string;

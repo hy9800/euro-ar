@@ -121,7 +121,7 @@ export default async function CitiesPage({ searchParams }: CitiesPageProps) {
         "@type": "CollectionPage",
         name: "المدن | الدول التدريبية العالمية",
         description:
-          "استكشف كورسات التدريب في المدن الرئيسية في جميع أنحاء العالم. ابحث عن كورسات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها.",
+          "استكشف دورةات التدريب في المدن الرئيسية في جميع أنحاء العالم. ابحث عن دورةات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها.",
         url: `${baseUrl}/training-cities`,
         publisher: {
           "@type": "Organization",
@@ -147,14 +147,14 @@ export default async function CitiesPage({ searchParams }: CitiesPageProps) {
         <Schema
           pageType="cities"
           pageTitle="المدن | الدول التدريبية العالمية"
-          pageDescription="استكشف كورسات التدريب في المدن الرئيسية في جميع أنحاء العالم. ابحث عن كورسات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
+          pageDescription="استكشف دورةات التدريب في المدن الرئيسية في جميع أنحاء العالم. ابحث عن دورةات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
           pageUrl={`${baseUrl}/training-cities`}
         />
         <header>
           <HeroBanner
             backgroundImage="/assets/images/hero-cities.webp"
-            title="استكشف كورسات التدريب في المدن الرئيسية في جميع أنحاء العالم"
-            description="ابحث عن كورسات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
+            title="استكشف دورةات التدريب في المدن الرئيسية في جميع أنحاء العالم"
+            description="ابحث عن دورةات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
             breadcrumbs={breadcrumbs}
             enableTypewriter={true}
             typewriterSpeed={100}
@@ -190,7 +190,7 @@ export default async function CitiesPage({ searchParams }: CitiesPageProps) {
       <Schema
         pageType="cities"
         pageTitle="المدن | الدول التدريبية العالمية"
-        pageDescription="استكشف كورسات التدريب في المدن الرئيسية في جميع أنحاء العالم. ابحث عن كورسات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
+        pageDescription="استكشف دورةات التدريب في المدن الرئيسية في جميع أنحاء العالم. ابحث عن دورةات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
         pageUrl={`${baseUrl}/training-cities`}
       />
 
@@ -198,8 +198,8 @@ export default async function CitiesPage({ searchParams }: CitiesPageProps) {
       <header>
         <HeroBanner
           backgroundImage="/assets/images/hero-cities.webp"
-          title="استكشف كورسات التدريب في المدن الرئيسية في جميع أنحاء العالم"
-          description="ابحث عن كورسات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
+          title="استكشف دورةات التدريب في المدن الرئيسية في جميع أنحاء العالم"
+          description="ابحث عن دورةات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
           typewriterSpeed={100}

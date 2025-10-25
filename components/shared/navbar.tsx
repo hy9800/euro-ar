@@ -53,7 +53,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "الرئيسية" },
     { href: "/training-cities", label: "مدن التدريب" },
-    { href: "/training-courses", label: "فئات التدريب" },
+    { href: "/training-courses", label: "تخصصات التدريب" },
     { href: "/about", label: "من نحن" },
   ];
 

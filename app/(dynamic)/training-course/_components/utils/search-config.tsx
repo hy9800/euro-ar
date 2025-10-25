@@ -72,7 +72,7 @@ export const createCustomActions = (
     return [
       {
         type: "button" as const,
-        label: "العودة إلى صفحة الكورس",
+        label: "العودة إلى صفحة الدورة",
         href: `/training-course/${courseSlug}`,
         variant: "secondary" as const,
         className: "bg-[#3E5EC0] hover:bg-[#3E5EC0] text-white cursor-pointer",

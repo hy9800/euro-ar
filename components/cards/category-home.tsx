@@ -24,7 +24,7 @@ export default function CategoryHome({ category, citySlug }: CategoryHomeProps) 
       />
 
       {/* Category Title */}
-      <h3 className="text-[12.5px] font-semibold capitalize flex-1 transition-all duration-[400ms] cubic-bezier-[0.175,0.885,0.32,1.275] text-[#2B2B2B] group-hover:text-[#3E5EC0] group-hover:transform group-hover:translate-x-1">
+      <h3 className="text-[12.5px] font-bold capitalize flex-1 transition-all duration-[400ms] cubic-bezier-[0.175,0.885,0.32,1.275] text-[#2B2B2B] group-hover:text-[#3E5EC0] group-hover:transform group-hover:translate-x-1">
         {category.title}
       </h3>
 

@@ -22,7 +22,7 @@ export default async function CitiesSection() {
             <SectionTitle
               title="جميع"
               highlight="المدن"
-              description="استكشف كورسات التدريب المهني في المدن الرئيسية في جميع أنحاء العالم"
+              description="استكشف دورةات التدريب المهني في المدن الرئيسية في جميع أنحاء العالم"
             />
           </div>
           <Link

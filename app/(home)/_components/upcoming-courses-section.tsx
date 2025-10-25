@@ -19,9 +19,9 @@ export default async function UpcomingCoursesSection() {
         <div className="md:mb-10 mb-8">
           {/* Section Header */}
           <SectionTitle
-            title="الكورسات"
+            title="الدورةات"
             highlight="القادمة"
-            description="الكورسات القادمة لتطوير المهارات وتحسين الأداء"
+            description="الدورةات القادمة لتطوير المهارات وتحسين الأداء"
           />
         </div>
 

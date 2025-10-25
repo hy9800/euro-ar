@@ -25,7 +25,7 @@ export default function CourseContent({ course }: CourseContentProps) {
       {/* Social Share Section */}
       <div className="social-share-section my-10 p-4 bg-gradient-to-br from-[#f8faff] to-[#f0f4ff] rounded-lg text-center">
         <h3 className="share-title text-lg font-semibold text-[#2d3748] mb-[15px] text-center">
-          شارك هذا الكورس
+          شارك هذا الدورة
         </h3>
         <SocialShareButtons
           courseUrl={courseUrl}

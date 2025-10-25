@@ -98,7 +98,7 @@ export async function generateMetadata({
       description:
         "دورة تدريبية مهنية بواسطة يوروكويست إنترناشيونال. قم بتطوير مهاراتك مع برنامج مدرب من قبل الخبراء المصمم لتطوير المهنية والم carrière.",
       keywords:
-        "دورة تدريبية مهنية, كورس, يوروكويست إنترناشيونال, تطوير المهارات, تطوير المهنية",
+        "دورة تدريبية مهنية, دورة, يوروكويست إنترناشيونال, تطوير المهارات, تطوير المهنية",
       authors: [{ name: "الدول التدريبية العالمية" }],
       creator: "الدول التدريبية العالمية",
       publisher: "الدول التدريبية العالمية",
@@ -239,7 +239,7 @@ export default async function Page({ params }: PageProps) {
           backgroundImage={"/assets/images/hero-about.webp"}
           title={seo.h1 || course.title}
           description={
-            seo.description || course.description || "جاري تحميل تفاصيل الكورس..."
+            seo.description || course.description || "جاري تحميل تفاصيل الدورة..."
           }
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
@@ -251,11 +251,11 @@ export default async function Page({ params }: PageProps) {
       {/* Main content with semantic HTML */}
       <main>
         <Container>
-          <section aria-label="جدول الكورس والتواريخ">
+          <section aria-label="جدول الدورة والتواريخ">
             <CourseTimings course={course} timings={timings} />
           </section>
 
-          <section aria-label="محتوى وتفاصيل الكورس">
+          <section aria-label="محتوى وتفاصيل الدورة">
             <CourseContent course={course} />
           </section>
         </Container>

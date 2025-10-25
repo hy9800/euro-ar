@@ -72,11 +72,11 @@ export async function generateMetadata(): Promise<Metadata> {
     // SEO-optimized fallback metadata
     return {
       title:
-        "الفئات التدريبية | الدول التدريبية العالمية",
+        "التخصصات التدريبية | الدول التدريبية العالمية",
       description:
-        "استكشف جميع فئات التدريب في الدول التدريبية العالمية. ابحث عن كورسات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات.",
+        "استكشف جميع تخصصات التدريب في الدول التدريبية العالمية. ابحث عن دورةات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات.",
       keywords:
-        "الفئات التدريبية, الكورسات المهنية, التدريب في الإدارة, التدريب في الموارد البشرية, التدريب في التكنولوجيا, التدريب في المالية, التطوير التجاري",
+        "التخصصات التدريبية, الدورةات المهنية, التدريب في الإدارة, التدريب في الموارد البشرية, التدريب في التكنولوجيا, التدريب في المالية, التطوير التجاري",
       authors: [{ name: "الدول التدريبية العالمية" }],
       creator: "الدول التدريبية العالمية",
       publisher: "الدول التدريبية العالمية",
@@ -111,7 +111,7 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
     },
     {
       href: "/training-courses",
-      label: "الفئات التدريبية",
+      label: "التخصصات التدريبية",
     },
   ];
 
@@ -120,9 +120,9 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
     ? {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: "الفئات التدريبية | الدول التدريبية العالمية",
+        name: "التخصصات التدريبية | الدول التدريبية العالمية",
         description:
-          "استكشف جميع فئات التدريب في الدول التدريبية العالمية. ابحث عن كورسات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات.",
+          "استكشف جميع تخصصات التدريب في الدول التدريبية العالمية. ابحث عن دورةات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات.",
         url: `${baseUrl}/training-courses`,
         publisher: {
           "@type": "Organization",
@@ -147,15 +147,15 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
       <>
         <Schema
           pageType="courses"
-          pageTitle="الفئات التدريبية | الدول التدريبية العالمية"
-          pageDescription="استكشف جميع فئات التدريب في الدول التدريبية العالمية. ابحث عن كورسات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
+          pageTitle="التخصصات التدريبية | الدول التدريبية العالمية"
+          pageDescription="استكشف جميع تخصصات التدريب في الدول التدريبية العالمية. ابحث عن دورةات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
           pageUrl={`${baseUrl}/training-courses`}
         />
         <header>
           <HeroBanner
             backgroundImage="/assets/images/hero-categories.webp"
-            title="استكشف جميع فئات التدريب في الدول التدريبية العالمية"
-            description="ابحث عن كورسات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
+            title="استكشف جميع تخصصات التدريب في الدول التدريبية العالمية"
+            description="ابحث عن دورةات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
             breadcrumbs={breadcrumbs}
             enableTypewriter={true}
             typewriterSpeed={100}
@@ -166,10 +166,10 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
           <Container className="text-center md:pb-12 pb-10">
             <article className="bg-gray-50 border border-gray-200 rounded-lg p-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                لا يوجد فئات متاحة
+                لا يوجد تخصصات متاحة
               </h2>
               <p className="text-gray-600">
-                نحن نعمل على إضافة المزيد من الفئات. يرجى التحقق مرة أخرى قريبا!
+                نحن نعمل على إضافة المزيد من التخصصات. يرجى التحقق مرة أخرى قريبا!
               </p>
             </article>
           </Container>
@@ -190,8 +190,8 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
 
       <Schema
         pageType="courses"
-        pageTitle="الفئات التدريبية | الدول التدريبية العالمية"
-        pageDescription="استكشف جميع فئات التدريب في الدول التدريبية العالمية. ابحث عن كورسات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
+        pageTitle="التخصصات التدريبية | الدول التدريبية العالمية"
+        pageDescription="استكشف جميع تخصصات التدريب في الدول التدريبية العالمية. ابحث عن دورةات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
         pageUrl={`${baseUrl}/training-courses`}
       />
 
@@ -199,8 +199,8 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
       <header>
         <HeroBanner
           backgroundImage="/assets/images/hero-categories.webp"
-          title="استكشف جميع فئات التدريب في الدول التدريبية العالمية"
-          description="ابحث عن كورسات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
+          title="استكشف جميع تخصصات التدريب في الدول التدريبية العالمية"
+          description="ابحث عن دورةات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
           typewriterSpeed={100}
@@ -211,7 +211,7 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
       {/* Main content with semantic HTML */}
       <main>
         <Container className="md:pb-12 pb-10">
-          <section aria-label="الفئات التدريبية والبحث">
+          <section aria-label="التخصصات التدريبية والبحث">
             <CategoriesSection categories={categories} />
           </section>
         </Container>

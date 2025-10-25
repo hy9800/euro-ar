@@ -47,7 +47,7 @@ export default function Footer() {
             {/* Popular Categories */}
             <div className="max-w-[300px] w-full md:w-auto">
               <p className="text-white text-lg font-bold mb-4">
-                الفئات الشائعة
+                التخصصات الشائعة
               </p>
               <ul className="flex flex-col gap-1.5">
                 {popularCategories.map((category) => (

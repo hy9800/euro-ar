@@ -130,7 +130,7 @@ export default async function Page({
     },
     {
       href: "/training-courses",
-      label: "الفئات",
+      label: "التخصصات",
     },
     {
       href: `/training-courses/${category?.slug || slug}`,
@@ -214,7 +214,7 @@ export default async function Page({
       <header>
         <HeroBanner
           backgroundImage="/assets/images/hero-about.webp"
-          title={category?.h1 || category?.title || "الفئات"}
+          title={category?.h1 || category?.title || "التخصصات"}
           description={category?.description || "جاري تحميل تفاصيل الفئة..."}
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
@@ -226,7 +226,7 @@ export default async function Page({
       {/* Main content with semantic HTML */}
       <main>
         <Container className="md:pb-12 pb-10">
-          <section aria-label="بحث وعرض الكورسات">
+          <section aria-label="بحث وعرض الدورةات">
             <CategorySection courses={courses} searchParams={searchParamsData} />
           </section>
         </Container>
