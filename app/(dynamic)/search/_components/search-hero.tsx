@@ -13,7 +13,7 @@ export default function SearchHero({ totalCount, resultType }: SearchHeroProps) 
   return (
     <HeroBanner
       backgroundImage="/assets/images/hero-about.webp"
-      title="Search Results"
+      title="نتائج البحث"
       description={description}
       breadcrumbs={breadcrumbs}
       enableTypewriter={true}

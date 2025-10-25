@@ -45,7 +45,7 @@ export default async function SitemapPage() {
       {/* Hero Banner */}
       <HeroBanner
         backgroundImage="/assets/images/hero-sitemap.png"
-        title="Sitemap"
+        title="خريطة الموقع"
         description="خريطة موقع كاملة لدورات التدريب، التخصصات، المدن، وجميع الصفحات المتاحة في الدول التدريبية العالمية."
         breadcrumbs={breadcrumbs}
         enableTypewriter={true}

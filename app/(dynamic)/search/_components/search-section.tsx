@@ -33,16 +33,16 @@ export default function SearchSection() {
             ⚠️
           </div>
           <h2 className="text-xl font-semibold text-gray-700 mb-2">
-            Search Error
+            خطأ في البحث
           </h2>
           <p className="text-gray-500 mb-6">{error}</p>
           <button
             onClick={retry}
             disabled={isRetrying}
             className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-label={isRetrying ? "Retrying search" : "Try search again"}
+            aria-label={isRetrying ? "جاري الإعادة..." : "إعادة البحث"}
           >
-            {isRetrying ? "Retrying..." : "Try Again"}
+            {isRetrying ? "جاري الإعادة..." : "إعادة البحث"}
           </button>
         </article>
       </div>
@@ -81,7 +81,7 @@ export default function SearchSection() {
           <div className="flex justify-center items-center py-12">
             <SmallLoadingSpinner 
               size="lg" 
-              text="Searching courses..." 
+              text="جاري البحث عن دورات..." 
               className="flex-col gap-3"
             />
           </div>
