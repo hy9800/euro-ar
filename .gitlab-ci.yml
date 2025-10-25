@@ -1,0 +1,58 @@
+stages:
+  - deploy
+
+variables:
+  NODE_ENV: production
+  APP_PORT: "3001"
+  PM2_APP_NAME: "EuroQuest-Next-Ar"
+  BRANCH: "master"
+
+before_script:
+  - apt-get update -y && apt-get install -y openssh-client git
+  - eval "$(ssh-agent -s)"
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+  - ssh-keyscan -p 7822 -v "$VPS_HOST" >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+  - set -e
+
+deploy:
+  stage: deploy
+  script:
+    - |
+      ssh -p 7822 "$VPS_USER@$VPS_HOST" "bash -lc '
+        set -euo pipefail
+        cd \"$VPS_PATH\"
+
+        ssh-keyscan gitlab.com >> ~/.ssh/known_hosts 2>/dev/null || true
+        chmod 644 ~/.ssh/known_hosts || true
+
+        export GIT_SSH_COMMAND=\"ssh -i ~/.ssh/ar_euroqst_com_deploy_key -o IdentitiesOnly=yes\"
+
+        git fetch origin
+        git checkout -f \"$BRANCH\"
+        git reset --hard \"origin/$BRANCH\"
+        git clean -fd
+      '"
+
+    - |
+      ssh -p 7822 "$VPS_USER@$VPS_HOST" "bash -lc '
+        set -euo pipefail
+        cd \"$VPS_PATH\"
+        if [ -f package-lock.json ]; then
+          npm ci --include=dev
+        else
+          npm install --include=dev
+        fi
+        npm run build
+      '"
+
+    - |
+      ssh -p 7822 "$VPS_USER@$VPS_HOST" "bash -lc '
+        set -euo pipefail
+        cd \"$VPS_PATH\"
+        export NODE_ENV=\"$NODE_ENV\"
+        export PORT=\"$APP_PORT\"
+        pm2 reload \"$PM2_APP_NAME\" --update-env || pm2 start npm --name \"$PM2_APP_NAME\" -- run start -- -p \"$APP_PORT\" -H 0.0.0.0
+        pm2 save
+      '"
