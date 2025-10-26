@@ -60,11 +60,17 @@ export default function Navbar() {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="fixed top-0 right-0 w-full h-[70px] bg-white flex items-center z-[100]" aria-label="Main navigation">
+      <nav
+        className="fixed top-0 right-0 w-full h-[70px] bg-white flex items-center z-[100]"
+        aria-label="Main navigation"
+      >
         <div className="container mx-auto">
           <div className="w-full flex items-center justify-between">
             <div className="flex items-center gap-4 max-w-[280px] justify-between">
-              <Link href="/" aria-label="الدول التدريبية العالمية - Return to homepage">
+              <Link
+                href="/"
+                aria-label="الدول التدريبية العالمية - Return to homepage"
+              >
                 <Image
                   src="/assets/images/logo.svg"
                   alt="الدول التدريبية العالمية Training Logo"
@@ -76,21 +82,18 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <ul className="hidden lg:flex gap-6">
+            <ul className="hidden md:flex gap-6">
               {navLinks.map((link) => (
-                <li
-                  key={link.href}
-                  className="relative group"
-                >
-                  <Link 
-                    href={link.href} 
-                    className={`text-[#314EA9] transition-colors duration-300 font-semibold text-[15px] relative ${
+                <li key={link.href} className="relative group">
+                  <Link
+                    href={link.href}
+                    className={`text-[#314EA9] transition-colors duration-300 font-semibold text-base relative ${
                       isActive(link.href) ? "font-bold" : "font-semibold"
                     }`}
                   >
                     {link.label}
                     {/* Active indicator */}
-                    <span 
+                    <span
                       className={`absolute -bottom-1 right-1/2 transform translate-x-[50%] h-[3px] bg-[#20b486] rounded-full transition-all duration-1000 ease-in-out ${
                         isActive(link.href) ? "w-8" : "w-0 group-hover:w-[10px]"
                       }`}
@@ -117,7 +120,11 @@ export default function Navbar() {
                 <Menu className="w-5 h-5 font-semibold text-blue-600" />
               </button>
             </div>
-            <div className="hidden md:block"></div>
+            <Link href="https://euroqst.com" className="hidden md:block">
+              <button className="text-[#314EA9] border border-[#314EA9] py-2 px-4 rounded-full transition-colors duraton-300 font-medium text-sm relative cursor-pointer hover:bg-[#314ea9] hover:text-white">
+                English Courses
+              </button>
+            </Link>
           </div>
         </div>
       </nav>
@@ -209,13 +216,17 @@ export default function Navbar() {
                         <Link
                           href={link.href}
                           className={`flex items-center px-5 py-3 rounded-2xl no-underline font-medium text-base transition-all duration-300 relative ${
-                            isActive(link.href)
-                              ? "font-bold "
-                              : ""
+                            isActive(link.href) ? "font-bold " : ""
                           }`}
                           onClick={closeSidebar}
                         >
-                          <span className={`font-medium text-[#3E5EC0] tracking-wide relative ${isActive(link.href) ? "after:content-[''] after:absolute after:bottom-[-4px] after:right-0 after:w-[40px] after:h-[3px] after:bg-emerald-500 after:rounded-full" : ""}`}>
+                          <span
+                            className={`font-medium text-[#3E5EC0] tracking-wide relative ${
+                              isActive(link.href)
+                                ? "after:content-[''] after:absolute after:bottom-[-4px] after:right-0 after:w-[40px] after:h-[3px] after:bg-emerald-500 after:rounded-full"
+                                : ""
+                            }`}
+                          >
                             {link.label}
                           </span>
                         </Link>
@@ -256,14 +267,11 @@ export default function Navbar() {
                         className="w-full px-5 py-3 text-start rounded-2xl text-[#3E5EC0] border-none font-semibold text-base cursor-pointer transition-all duration-300"
                         suppressHydrationWarning={true}
                       >
-                        <span className="font-medium">
-                          اتصل بنا
-                        </span>
+                        <span className="font-medium">اتصل بنا</span>
                       </button>
                     </motion.div>
                   </motion.div>
 
-                  
                   {/* Language Button */}
                   <motion.div
                     className="px-6 max-[480px]:px-4 mt-8"
@@ -285,14 +293,12 @@ export default function Navbar() {
                       <button
                         onClick={() => {
                           // TODO: Add language switching functionality
-                          console.log('Language switch to English');
+                          console.log("Language switch to English");
                         }}
                         className="font-cairo w-full px-5 py-3 text-center rounded-2xl bg-blue-500/10 text-[#3E5EC0] font-bold text-base cursor-pointer transition-all duration-300 hover:shadow-lg"
                         suppressHydrationWarning={true}
                       >
-                        <span className="font-medium">
-                         English Courses
-                        </span>
+                        <span className="font-medium">English Courses</span>
                       </button>
                     </motion.div>
                   </motion.div>
@@ -310,7 +316,9 @@ export default function Navbar() {
                       التدريب والتطوير المهني
                     </p>
                     <div className="text-slate-400 text-xs font-normal">
-                      <span>جميع الحقوق محفوظة. يوروكويست إنترناشيونال © 2026</span>
+                      <span>
+                        جميع الحقوق محفوظة. يوروكويست إنترناشيونال © 2026
+                      </span>
                     </div>
                   </div>
                 </motion.div>
