@@ -942,11 +942,11 @@ function generateBrochureHTML(course: any, timing: any): string {
          <div class="cover-details">
            <div class="cover-detail-item">
              <span class="cover-detail-label">تاريخ البداية</span>
-             <span class="cover-detail-value">${timing.start_date}</span>
+             <span class="cover-detail-value">${formatDate(timing.start_date)}</span>
                   </div>
            <div class="cover-detail-item">
              <span class="cover-detail-label">تاريخ النهاية</span>
-             <span class="cover-detail-value">${timing.end_date}</span>
+             <span class="cover-detail-value">${formatDate(timing.end_date)}</span>
                   </div>
            <div class="cover-detail-item">
              <span class="cover-detail-label">المدينة</span>
