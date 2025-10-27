@@ -6,8 +6,6 @@ variables:
   APP_PORT: "3001"
   PM2_APP_NAME: "EuroQuest-Next-Ar"
   BRANCH: "master"
-  # حدّ ذاكرة Node بالـ build والـ run
-  NODE_OPTIONS: "--max-old-space-size=512"
 
 before_script:
   - apt-get update -y && apt-get install -y openssh-client git
@@ -41,17 +39,11 @@ deploy:
       ssh -p 7822 "$VPS_USER@$VPS_HOST" "bash -lc '
         set -euo pipefail
         cd \"$VPS_PATH\"
-
-        # استخدم production-only deps
         if [ -f package-lock.json ]; then
-          npm ci --omit=dev
+          npm ci --include=dev
         else
-          npm install --omit=dev
+          npm install --include=dev
         fi
-
-        # خفّض استهلاك الذاكرة وقت build
-        export NODE_OPTIONS=\"$NODE_OPTIONS\"
-
         npm run build
       '"
 
@@ -59,17 +51,8 @@ deploy:
       ssh -p 7822 "$VPS_USER@$VPS_HOST" "bash -lc '
         set -euo pipefail
         cd \"$VPS_PATH\"
-
         export NODE_ENV=\"$NODE_ENV\"
         export PORT=\"$APP_PORT\"
-        export NODE_OPTIONS=\"$NODE_OPTIONS\"
-
-        pm2 describe \"$PM2_APP_NAME\" >/dev/null 2>&1 && \
-          pm2 delete \"$PM2_APP_NAME\" || true
-
-        pm2 start node --name \"$PM2_APP_NAME\" \
-          --max-memory-restart 350M -- \
-          .next/standalone/server.js -p \"$APP_PORT\" -H 0.0.0.0
-
+        pm2 reload \"$PM2_APP_NAME\" --update-env || pm2 start npm --name \"$PM2_APP_NAME\" -- run start -- -p \"$APP_PORT\" -H 0.0.0.0
         pm2 save
       '"
