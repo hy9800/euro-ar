@@ -17,18 +17,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-
-  compress: true,
-  poweredByHeader: false,
-  reactStrictMode: false,
-  swcMinify: true,
-  experimental: {
-    turbotrace: false,
-    optimizeCss: true,
-    optimizePackageImports: ['react', 'next', 'lucide-react'],
-  },
-
-  output: 'standalone',
 };
 
 
