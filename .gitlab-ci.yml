@@ -4,6 +4,7 @@ stages:
 
 variables:
   NODE_ENV: production
+  NPM_CONFIG_PRODUCTION: "false"
   APP_PORT: "3001"
   PM2_APP_NAME: "EuroQuest-Next-Ar"
   BRANCH: "master"
@@ -20,7 +21,7 @@ build:
   stage: build
   image: node:20-bullseye
   script:
-    - npm ci
+    - npm ci --include=dev
     - npm run build
     - mkdir -p out_artifact/.next
     - cp -r .next/standalone out_artifact/
