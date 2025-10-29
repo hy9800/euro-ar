@@ -102,6 +102,29 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     notFound();
   }
 
+  const MONTH_NAMES = [
+    "يناير",
+    "فبراير", 
+    "مارس",
+    "أبريل",
+    "مايو",
+    "يونيو",
+    "يوليو",
+    "أغسطس",
+    "سبتمبر",
+    "أكتوبر",
+    "نوفمبر",
+    "ديسمبر",
+  ] as const;
+
+  const formatDate = (dateString: string, monthFormat: "long" | "short" = "long") => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = MONTH_NAMES[date.getMonth()];
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+  };
+
   const breadcrumbs = [
     {
       href: "/",
@@ -246,11 +269,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 <time className="flex items-center" dateTime={blog.created_at} itemProp="datePublished">
                   <i className="far fa-calendar mr-2 text-blue-600" aria-hidden="true"></i>
                   <span>
-                    {new Date(blog.created_at).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
+                    {formatDate(blog.created_at)}
                   </span>
                 </time>
                 <span className="flex items-center" aria-label={`${blog.number_of_views} views`}>
@@ -260,11 +279,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 {blog.updated_at !== blog.created_at && (
                   <time className="text-xs text-gray-500" dateTime={blog.updated_at} itemProp="dateModified">
                     Updated:{" "}
-                    {new Date(blog.updated_at).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
+                    {formatDate(blog.updated_at, "short")}
                   </time>
                 )}
               </div>

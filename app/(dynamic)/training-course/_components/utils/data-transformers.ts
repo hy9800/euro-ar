@@ -6,7 +6,10 @@ import { MONTH_NAMES, MONTH_NAMES_LOWERCASE, DATE_FORMAT_OPTIONS } from "./const
  */
 export const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", DATE_FORMAT_OPTIONS);
+  const day = date.getDate();
+  const month = MONTH_NAMES[date.getMonth()];
+  const year = date.getFullYear();
+  return `${day} ${month} ${year}`;
 };
 
 /**

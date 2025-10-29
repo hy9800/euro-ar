@@ -27,14 +27,28 @@ export default function DownloadPopup() {
   const { isDownloadOpen, downloadData, closeDownload } = usePopupStore();
   const { showSuccessAlert, showErrorAlert } = useAlert();
 
+  const MONTH_NAMES = [
+    "يناير",
+    "فبراير", 
+    "مارس",
+    "أبريل",
+    "مايو",
+    "يونيو",
+    "يوليو",
+    "أغسطس",
+    "سبتمبر",
+    "أكتوبر",
+    "نوفمبر",
+    "ديسمبر",
+  ] as const;
+
   // Format date function
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
+    const day = date.getDate();
+    const month = MONTH_NAMES[date.getMonth()];
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
   };
   const { course, timing, courseTitle = "", timingId = "" } = downloadData;
   const [formData, setFormData] = useState<DownloadFormData>({

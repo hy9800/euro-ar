@@ -108,15 +108,27 @@ export async function POST(request: NextRequest) {
 }
 
 function generateBrochureHTML(course: any, timing: any): string {
+  const MONTH_NAMES = [
+    "يناير",
+    "فبراير", 
+    "مارس",
+    "أبريل",
+    "مايو",
+    "يونيو",
+    "يوليو",
+    "أغسطس",
+    "سبتمبر",
+    "أكتوبر",
+    "نوفمبر",
+    "ديسمبر",
+  ] as const;
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    // Use UTC to avoid timezone offset issues
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-      timeZone: "UTC",
-    });
+    const day = date.getUTCDate();
+    const month = MONTH_NAMES[date.getUTCMonth()];
+    const year = date.getUTCFullYear();
+    return `${day} ${month} ${year}`;
   };
 
   return `

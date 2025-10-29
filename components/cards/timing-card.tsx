@@ -45,11 +45,11 @@ export default function TimingCard({
           <div className="flex justify-between items-center mb-4 pb-3 border-b border-gray-200">
             <div className="flex items-center gap-2">
               <MapPin size={16} className="text-[#3E5EC0]" />
-              <h3 className="text-sm font-semibold text-[#253a7b] m-0">
+              <h3 className="text-sm font-bold text-[#253a7b] m-0">
                 {timing.city.title}
               </h3>
             </div>
-            <div className="price text-[#253a7b] font-semibold text-sm flex items-center gap-1">
+            <div className="price text-[#253a7b] font-bold text-sm flex items-center gap-1">
               الرسوم: {Number(timing.fees) + 0} <Euro size={14} />
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function TimingCard({
               <span className="label text-xs whitespace-nowrap text-gray-600 font-medium">
                 من:
               </span>
-              <span className="value text-[11px] whitespace-nowrap text-[#253a7b] font-semibold">
+              <span className="value text-[11px] whitespace-nowrap text-[#253a7b] font-bold">
                 {formatDate?.(timing.start_date)}
               </span>
             </div>
@@ -68,7 +68,7 @@ export default function TimingCard({
               <span className="label text-xs whitespace-nowrap text-gray-600 font-medium">
                 إلى:
               </span>
-              <span className="value text-[11px] whitespace-nowrap text-[#253a7b] font-semibold">
+              <span className="value text-[11px] whitespace-nowrap text-[#253a7b] font-bold">
                 {formatDate?.(timing.end_date)}
               </span>
             </div>

@@ -6,14 +6,28 @@ interface UpcomingCourseCardProps {
   course: UpcomingCourse;
 }
 
+const MONTH_NAMES = [
+  "يناير",
+  "فبراير", 
+  "مارس",
+  "أبريل",
+  "مايو",
+  "يونيو",
+  "يوليو",
+  "أغسطس",
+  "سبتمبر",
+  "أكتوبر",
+  "نوفمبر",
+  "ديسمبر",
+] as const;
+
 // Format date function
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
-  return date.toLocaleDateString("en-GB", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  });
+  const day = date.getDate();
+  const month = MONTH_NAMES[date.getMonth()];
+  const year = date.getFullYear();
+  return `${day} ${month} ${year}`;
 };
 
 export default function UpcommingCourseCard({

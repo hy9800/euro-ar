@@ -72,7 +72,7 @@ export default function Navbar() {
                 aria-label="الدول التدريبية العالمية - Return to homepage"
               >
                 <Image
-                  src="/assets/images/logo.svg"
+                  src="/assets/images/logo-ar.jpg"
                   alt="الدول التدريبية العالمية Training Logo"
                   width={190}
                   height={50}
