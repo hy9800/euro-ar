@@ -93,8 +93,9 @@ deploy:
           exit 1
         fi
 
-        pm2 reload "$PM2_APP_NAME" --update-env --interpreter=node -- "$app_root/server.js" || \
+        pm2 delete "$PM2_APP_NAME" || true
         pm2 start --interpreter=node --name "$PM2_APP_NAME" "$app_root/server.js"
+        pm2 save
 
         pm2 save
 
