@@ -6,6 +6,7 @@ variables:
   NODE_ENV: production
   NPM_CONFIG_PRODUCTION: "false"
   APP_PORT: "3001"
+  APP_HOST: "127.0.0.1"
   PM2_APP_NAME: "EuroQuest-Next-Ar"
   BRANCH: "master"
   NEXT_TELEMETRY_DISABLE: "1"
@@ -84,6 +85,7 @@ deploy:
 
         export NODE_ENV=\"$NODE_ENV\"
         export PORT=\"$APP_PORT\"
+        export HOST=\"${APP_HOST:-127.0.0.1}\"
 
         app_root=\"\$release_dir/standalone\"
         if [ ! -f \"\$app_root/server.js\" ]; then
