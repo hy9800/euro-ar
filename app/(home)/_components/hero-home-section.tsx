@@ -20,7 +20,7 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
       <Container className="max-w-[1200px] mx-auto h-full min-h-[calc(100vh-160px)] flex flex-col items-center justify-center gap-5 text-center static">
         <div className="max-w-full w-full">
           {/* Hero Title */}
-          <h1 className="font-jost text-2xl md:text-4xl lg:text-5xl max-w-[1000px] mx-auto font-bold text-gray-900 mb-2 leading-tight animate-slide-up">
+          <h1 className="font-cairo text-2xl md:text-4xl lg:text-5xl max-w-[1000px] mx-auto font-bold text-gray-900 mb-2 leading-tight animate-slide-up">
             انضم إلى
             <span className="relative inline-block mx-2">
               <span className="text-[#3E5EC0] font-bold">+1000</span>

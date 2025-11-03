@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --font-exo: 'Exo', sans-serif;
   --font-cairo: 'Cairo', sans-serif;
 }
 

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Exo, Cairo , Jost} from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar";
 import QueryProvider from "@/providers/query-provider";
@@ -7,18 +7,12 @@ import { Toaster } from "sonner";
 import Footer from "@/components/shared/footer";
 import PopupProvider from "@/components/popups/popup-provider";
 
-
-const exo = Exo({
-  variable: "--font-exo",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["latin", "arabic"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
+  fallback: ["system-ui", "arial"],
 });
 
 
