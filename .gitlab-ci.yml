@@ -48,7 +48,7 @@ build:
     - |
       cat <<EOF > ~/.ssh/config
       Host *
-        Port 7822
+        Port 22
         StrictHostKeyChecking no
       EOF
     - chmod 600 ~/.ssh/config
