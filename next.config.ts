@@ -1,22 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // output: 'standalone',
+  output: 'standalone',
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'api-ar.euroqst.com',
         port: '',
-        pathname: '/assets/**',
+        pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'ar.euroqst.com',
         port: '',
-        pathname: '/assets/**',
+        pathname: '/**',
       },
     ],
+    domains: ['api-ar.euroqst.com', 'ar.euroqst.com'],
   },
 };
 
