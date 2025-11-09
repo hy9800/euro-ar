@@ -28,7 +28,7 @@ export default function ContactSection({
             {/* Request Image */}
             <div className="relative max-w-[400px] flex items-center justify-center">
               <img
-                src="/assets/images/request-call-img.png"
+                src="./assets/images/request-call-img.png"
                 alt="رسم توضيحي لطلب الاتصال"
                 className="w-full h-auto object-cover"
               />

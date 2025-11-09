@@ -15,7 +15,7 @@ export default function AboutSection({ className = "" }: AboutSectionProps) {
           <div className="about-content relative max-w-[600px]">
             {/* Decorative bullets shape */}
             <img
-              src="/assets/images/bullets-shape.svg"
+              src="./assets/images/bullets-shape.svg"
               alt=""
               className="absolute -top-8 -left-8 w-16 h-16 opacity-20"
             />
@@ -27,7 +27,7 @@ export default function AboutSection({ className = "" }: AboutSectionProps) {
                 <div className="inline-block ml-3 relative">
                   <span className="text-[#3E5EC0] font-bold">يوروكويست</span>
                   <img
-                    src="/assets/images/line.svg"
+                    src="./assets/images/line.svg"
                     alt=""
                     className="absolute -bottom-1 left-0 w-full h-auto"
                   />
