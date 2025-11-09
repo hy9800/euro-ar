@@ -165,7 +165,7 @@ export default function Navbar() {
               >
                 <div className="flex items-center justify-between mb-4">
                   <Image
-                    src="/assets/images/logo.svg"
+                    src="./assets/images/logo.svg"
                     alt="الدول التدريبية العالمية Training Logo"
                     width={160}
                     height={50}

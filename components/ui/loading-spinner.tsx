@@ -6,7 +6,7 @@ export default function LoadingSpinner() {
       <div className="flex flex-col items-center space-y-6">
         <div className="relative">
           <Image
-            src="/assets/images/loader-logo.svg"
+            src="./assets/images/loader-logo.svg"
             alt="Loading"
             width={80}
             height={89}
@@ -15,7 +15,7 @@ export default function LoadingSpinner() {
           />
           <div className="absolute inset-0 animate-ping">
             <Image
-              src="/assets/images/loader-logo.svg"
+              src="./assets/images/loader-logo.svg"
               alt=""
               width={80}
               height={89}

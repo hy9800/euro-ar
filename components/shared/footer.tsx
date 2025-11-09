@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="max-w-[300px] w-full md:w-auto">
               <Link href="/" className="text-white/50">
                 <Image
-                  src="/assets/images/logo.svg"
+                  src="./assets/images/logo.svg"
                   alt="EuroQuest"
                   width={150}
                   height={50}
