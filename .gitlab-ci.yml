@@ -27,6 +27,9 @@ build:
     - mkdir -p out_artifact
     - cp -r .next out_artifact/.next
     - '[ -d public ] && cp -r public out_artifact/public || true'
+    - cp package.json out_artifact/package.json
+    - '[ -f package-lock.json ] && cp package-lock.json out_artifact/package-lock.json || true'
+    - cp -r node_modules out_artifact/node_modules
     - tar -czf app.tgz -C out_artifact .
   artifacts:
     when: on_success
@@ -70,9 +73,23 @@ deploy:
         tar -xzf /tmp/app.tgz -C \"\$release_dir\"
         mv /tmp/app.tgz \"/tmp/app.tgz.\$ts\"
 
+        # تحديث .next و public في مجلد المشروع الرئيسي
         rsync -a \"\$release_dir/.next/\" .next/
+
         if [ -d \"\$release_dir/public\" ]; then
           rsync -a \"\$release_dir/public/\" public/
+        fi
+
+        if [ -d \"\$release_dir/node_modules\" ]; then
+          rsync -a \"\$release_dir/node_modules/\" node_modules/
+        fi
+
+        if [ -f \"\$release_dir/package.json\" ]; then
+          cp \"\$release_dir/package.json\" package.json
+        fi
+
+        if [ -f \"\$release_dir/package-lock.json\" ]; then
+          cp \"\$release_dir/package-lock.json\" package-lock.json
         fi
 
         export NODE_ENV=production
