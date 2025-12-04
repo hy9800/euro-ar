@@ -13,22 +13,14 @@ export default function CityHomeCard({ city }: CityHomeCardProps) {
 
   return (
     <Link href={`/training-cities/${city.slug}`} className="px-2">
-      <div
-        className="city-card block group cursor-pointer"
-      >
+      <div className="city-card block group cursor-pointer">
         <div>
           {/* City Image */}
           <div className="city-image relative h-48 overflow-hidden">
-            <Image
+            <img
               src={city.image}
               alt={city.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-all duration-500 group-hover:scale-105"
-              priority={false}
-              quality={75}
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             />
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
