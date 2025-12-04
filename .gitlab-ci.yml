@@ -6,7 +6,7 @@ variables:
   NODE_ENV: production
   NPM_CONFIG_PRODUCTION: "false"
   APP_PORT: "3001"
-  APP_HOST: "127.0.0.1"
+  APP_HOST: "0.0.0.0"
   PM2_APP_NAME: "EuroQuest-Next-Ar"
   BRANCH: "master"
   NEXT_TELEMETRY_DISABLE: "1"
@@ -24,12 +24,12 @@ build:
   script:
     - npm ci --include=dev
     - npm run build
-    - mkdir -p out_artifact/.next
-    - cp -r .next/standalone out_artifact/
-    - mkdir -p out_artifact/.next
-    - cp -r .next/static out_artifact/.next/static
+    - mkdir -p out_artifact
+    - cp -r .next out_artifact/.next
     - '[ -d public ] && cp -r public out_artifact/public || true'
     - cp package.json out_artifact/package.json
+    - '[ -f package-lock.json ] && cp package-lock.json out_artifact/package-lock.json || true'
+    - cp -r node_modules out_artifact/node_modules
     - tar -czf app.tgz -C out_artifact .
   artifacts:
     when: on_success
@@ -48,7 +48,7 @@ build:
     - |
       cat <<EOF > ~/.ssh/config
       Host *
-        Port 7822
+        Port 22
         StrictHostKeyChecking no
       EOF
     - chmod 600 ~/.ssh/config
@@ -68,37 +68,40 @@ deploy:
 
         ts=\$(date +%Y%m%d%H%M%S)
         release_dir=\"releases/\$ts\"
-        mkdir -p \"\$release_dir\" shared
+        mkdir -p \"\$release_dir\"
 
         tar -xzf /tmp/app.tgz -C \"\$release_dir\"
         mv /tmp/app.tgz \"/tmp/app.tgz.\$ts\"
 
-        mkdir -p .next/static public
-
-        if [ -d \"\$release_dir/.next/static\" ]; then
-          rsync -a \"\$release_dir/.next/static/\" .next/static/
-        fi
+        # تحديث .next و public في مجلد المشروع الرئيسي
+        rsync -a \"\$release_dir/.next/\" .next/
 
         if [ -d \"\$release_dir/public\" ]; then
           rsync -a \"\$release_dir/public/\" public/
         fi
 
-        export NODE_ENV=\"$NODE_ENV\"
-        export PORT=\"$APP_PORT\"
-        export HOST=\"${APP_HOST:-127.0.0.1}\"
-
-        app_root=\"\$release_dir/standalone\"
-        if [ ! -f \"\$app_root/server.js\" ]; then
-          echo \"server.js not found in standalone (\$app_root)\" >&2
-          ls -la \"\$release_dir\" || true
-          ls -la \"\$app_root\" || true
-          exit 1
+        if [ -d \"\$release_dir/node_modules\" ]; then
+          rsync -a \"\$release_dir/node_modules/\" node_modules/
         fi
 
+        if [ -f \"\$release_dir/package.json\" ]; then
+          cp \"\$release_dir/package.json\" package.json
+        fi
+
+        if [ -f \"\$release_dir/package-lock.json\" ]; then
+          cp \"\$release_dir/package-lock.json\" package-lock.json
+        fi
+
+        export NODE_ENV=production
+        export PORT=\"$APP_PORT\"
+        export HOST=\"${APP_HOST:-0.0.0.0}\"
+
         pm2 delete \"$PM2_APP_NAME\" || true
-        pm2 start --interpreter=node --name "$PM2_APP_NAME" --cwd "$VPS_PATH" "\$app_root/server.js"
+        pm2 start npm --name \"$PM2_APP_NAME\" -- start
 
         pm2 save
+
+        ln -sfn \"\$release_dir\" current
 
         echo \"Deployed release at: \$release_dir\"
       "
