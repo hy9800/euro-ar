@@ -226,7 +226,7 @@ export default async function Page({
       {/* Main content with semantic HTML */}
       <main>
         <Container className="md:pb-12 pb-10">
-          <section aria-label="بحث وعرض الدورةات">
+          <section aria-label="بحث وعرض الدورات">
             <CategorySection courses={courses} searchParams={searchParamsData} />
           </section>
         </Container>
