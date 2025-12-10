@@ -610,7 +610,10 @@ export const getSitemapData = async (): Promise<SitemapApiResponse> => {
       return cached;
     }
 
-    const response = await apiClient.get<SitemapApiResponse>(API_ENDPOINTS.SITEMAP);
+    // Add timeout of 25 seconds to prevent build-time issues
+    const response = await apiClient.get<SitemapApiResponse>(API_ENDPOINTS.SITEMAP, {
+      timeout: 25000, // 25 second timeout
+    });
 
     if (response.success && response.data) {
       // Cache the result

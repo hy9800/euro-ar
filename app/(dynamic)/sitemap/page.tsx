@@ -4,6 +4,9 @@ import { Home } from "lucide-react";
 import { Metadata } from "next";
 import Schema from "@/components/shared/schema";
 
+// Force dynamic rendering to prevent build-time timeout
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: "خريطة الموقع | الدول التدريبية العالمية",
@@ -16,10 +19,17 @@ export default async function SitemapPage() {
   let sitemapData: SitemapApiResponse | null = null;
 
   try {
-    sitemapData = await getSitemapData();
+    // Add timeout wrapper to prevent long-running requests
+    sitemapData = await Promise.race([
+      getSitemapData(),
+      new Promise<SitemapApiResponse | null>((_, reject) =>
+        setTimeout(() => reject(new Error("Request timeout")), 30000) // 30 second timeout
+      ),
+    ]);
   } catch (err) {
-    // Handle error if needed
-    // console.error("Failed to fetch sitemap data:", err);
+    // Handle error gracefully - page will still render with static content
+    console.error("Failed to fetch sitemap data:", err);
+    sitemapData = null;
   }
 
   const breadcrumbs = [
@@ -158,35 +168,41 @@ export default async function SitemapPage() {
               </h2>
 
               <div className="ml-0 md:ml-28 grid grid-cols-1 md:grid-cols-2 gap-2 max-w-4xl">
-                <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-2">
-                  {sitemapData?.categories
-                    .slice(0, Math.ceil(sitemapData.categories.length / 2))
-                    .map((category) => (
-                      <li key={category.id}>
-                        <a
-                          href={`/training-courses/${category.slug}`}
-                          className="hover:text-blue-600 transition-colors duration-300"
-                        >
-                          {category.title}
-                        </a>
-                      </li>
-                    ))}
-                </ul>
+                {sitemapData?.categories && sitemapData.categories.length > 0 ? (
+                  <>
+                    <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-2">
+                      {sitemapData.categories
+                        .slice(0, Math.ceil(sitemapData.categories.length / 2))
+                        .map((category) => (
+                          <li key={category.id}>
+                            <a
+                              href={`/training-courses/${category.slug}`}
+                              className="hover:text-blue-600 transition-colors duration-300"
+                            >
+                              {category.title}
+                            </a>
+                          </li>
+                        ))}
+                    </ul>
 
-                <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-1">
-                  {sitemapData?.categories
-                    .slice(Math.ceil(sitemapData.categories.length / 2))
-                    .map((category) => (
-                      <li key={category.id}>
-                        <a
-                          href={`/training-courses/${category.slug}`}
-                          className="hover:text-blue-600 transition-colors duration-300"
-                        >
-                          {category.title}
-                        </a>
-                      </li>
-                    ))}
-                </ul>
+                    <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-1">
+                      {sitemapData.categories
+                        .slice(Math.ceil(sitemapData.categories.length / 2))
+                        .map((category) => (
+                          <li key={category.id}>
+                            <a
+                              href={`/training-courses/${category.slug}`}
+                              className="hover:text-blue-600 transition-colors duration-300"
+                            >
+                              {category.title}
+                            </a>
+                          </li>
+                        ))}
+                    </ul>
+                  </>
+                ) : (
+                  <p className="text-gray-500">جاري تحميل التخصصات التدريبية...</p>
+                )}
               </div>
             </div>
 
@@ -198,18 +214,22 @@ export default async function SitemapPage() {
               <h2 className="text-4xl font-semibold ml-0 md:ml-10">المدن التدريبية</h2>
 
               <div className="ml-0 md:ml-28 flex flex-wrap gap-12 max-w-4xl">
-                <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-1">
-                  {sitemapData?.cities.map((city) => (
-                    <li key={city.id}>
-                      <a
-                        href={`/training-cities/${city.slug}`}
-                        className="hover:text-blue-600 transition-colors duration-300"
-                      >
-                        {city.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                {sitemapData?.cities && sitemapData.cities.length > 0 ? (
+                  <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-1">
+                    {sitemapData.cities.map((city) => (
+                      <li key={city.id}>
+                        <a
+                          href={`/training-cities/${city.slug}`}
+                          className="hover:text-blue-600 transition-colors duration-300"
+                        >
+                          {city.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-500">جاري تحميل المدن التدريبية...</p>
+                )}
               </div>
             </div>
 
@@ -227,7 +247,7 @@ export default async function SitemapPage() {
                   <div className="ml-0 md:ml-28 space-y-8 max-w-4xl">
                     {Object.entries(sitemapData.city_category_seos).map(
                       ([categoryId, combinations]) => {
-                        const category = sitemapData.categories.find(
+                        const category = sitemapData?.categories?.find(
                           (cat) => cat.id.toString() === categoryId
                         );
                         if (!category) return null;

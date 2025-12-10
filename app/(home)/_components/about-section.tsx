@@ -1,5 +1,5 @@
 import Container from "@/components/shared/container";
-import { Check } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 
 interface AboutSectionProps {
@@ -8,142 +8,133 @@ interface AboutSectionProps {
 
 export default function AboutSection({ className = "" }: AboutSectionProps) {
   return (
-    <section className={`py-8 bg-[#F2F8FF] ${className}`}>
+    <section className={`mb-10 bg-white ${className}`}>
       <Container>
-        <div className="flex items-center justify-between flex-wrap md:flex-row flex-col gap-8">
-          {/* About Content */}
-          <div className="about-content relative max-w-[600px]">
-            {/* Decorative bullets shape */}
+        {/* Main Content Section */}
+        <div className="flex items-center justify-between lg:flex-row-reverse flex-col gap-12 lg:gap-16 mb-20">
+          {/* Image Section - Left */}
+          <div className="relative lg:w-1/2 flex items-center justify-center">
             <img
-              src="./assets/images/bullets-shape.svg"
-              alt=""
-              className="absolute -top-8 -left-8 w-16 h-16 opacity-20"
+              src="/assets/images/about-section.png"
+              alt="تعاون الفريق"
+              className="w-full h-auto object-cove"
             />
+          </div>
 
+          {/* Content Section - Right */}
+          <div className="w-full lg:w-1/2 space-y-6">
             {/* Section Header */}
-            <div className="mb-4">
-              <h2 className="text-xl lg:text-3xl font-bold text-gray-900 leading-tight">
-                <span className="text-gray-800">عن </span>
-                <div className="inline-block ml-3 relative">
-                  <span className="text-[#3E5EC0] font-bold">يوروكويست</span>
-                  <img
-                    src="./assets/images/line.svg"
-                    alt=""
-                    className="absolute -bottom-1 left-0 w-full h-auto"
-                  />
-                </div>
+            <div className="mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight">
+                من <span className="text-[#3E5EC0]">نحن</span>
               </h2>
             </div>
 
-            {/* About Text Points */}
-            <div className="space-y-6 mb-5">
-              <p className="flex items-start gap-2 text-gray-700 text-base leading-relaxed">
-                <Check className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span>
-                  يوروكويست إنترناشيونال هي
-                  <span className="text-emphasis font-semibold">
-                    {" "}
-                    معهد تدريب رائد{" "}
-                  </span>
-                  يقدم
-                  <span className="text-emphasis font-semibold">
-                    {" "}
-                    دورات تدريبية عالية الجودة
-                  </span>
-                  {" "}تمكّن الأفراد والمؤسسات من التميز.
+            {/* Bullet Points */}
+            <ul className="space-y-4 text-gray-700 text-base leading-relaxed">
+              <li className="flex items-start gap-3">
+                <span className="text-gray-900 text-2xl leading-none mt-1">
+                  •
                 </span>
-              </p>
-
-              <p className="flex items-start gap-2 text-gray-700 text-base leading-relaxed">
-                <Check className=" w-5 h-5 mt-1 flex-shrink-0" />
                 <span>
-                  نحن نركز على
-                  <span className="text-emphasis font-semibold ">
-                    {" "}
-                    تطوير الإدارة والقيادة المبتكرة،
-                  </span>
-                  {" "}لتعزيز أداء الأفراد والفرق والمؤسسات.
+                  يوروكويست إنترناشيونال هي معهد تدريبي رائد يقدم دورات تدريبية
+                  عالية الجودة تمكن الأفراد والمنظمات من التفوق.
                 </span>
-              </p>
-
-              <p className="flex items-start gap-2 text-gray-700 text-base leading-relaxed">
-                <Check className=" w-5 h-5 mt-1 flex-shrink-0" />
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-gray-900 text-2xl leading-none mt-1">
+                  •
+                </span>
                 <span>
-                  برامجنا
-                  <span className="text-emphasis font-semibold ">
-                    {" "}
-                    تدمج النظرية مع التطبيق العملي{" "}
-                  </span>
-                  لتحقيق نتائج مستدامة وتأثير قابل للقياس.
+                  نركز على الإدارة المبتكرة وتطوير القيادة، وتعزيز أداء الأفراد
+                  والفرق والمنظمات.
                 </span>
-              </p>
-            </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-gray-900 text-2xl leading-none mt-1">
+                  •
+                </span>
+                <span>
+                  تدمج برامجنا النظرية مع التطبيق العملي لتقديم نتائج مستدامة
+                  وتأثير قابل للقياس.
+                </span>
+              </li>
+            </ul>
 
             {/* Button */}
-            <Link href="/about" className="inline-block ml-6">
-              <button
-                className="bg-[#3E5EC0] hover:bg-[#2d4aa7] !mt-0 text-white px-8 py-3 rounded-lg font-semibold text-sm transform flex items-center gap-3 group"
-                suppressHydrationWarning={true}
-              >
-                اقرأ المزيد
-                <svg
-                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 -rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
+            <Link
+              href={"/about"}
+              className="bg-[#3E5EC0] hover:bg-[#2d4aa7] w-fit mt-0! mx-auto md:mx-0 text-white px-8 py-3 rounded-lg font-semibold text-base transition-all duration-300 transform cursor-pointer flex items-center gap-3 group"
+              suppressHydrationWarning={true}
+            >
+              <span>عرض المزيد</span>
+              <ChevronRightIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
+        </div>
 
-          {/* Statistics Grid */}
-          <div className="grid grid-cols-2 gap-5 max-w-[400px] w-full">
-            {/* Courses */}
-            <div className="bg-white rounded-2xl p-8 w-full h-full flex items-center justify-center text-center flex-col">
-              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                1000<span className="text-[#3E5EC0]">+</span>
-              </div>
-              <div className="text-sm text-[#6E6E6E]">دورة</div>
+        {/* Statistics Section */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-start">
+          {/* Years Of Expertise */}
+          <div className="text-center md:space-y-3 space-y-2">
+            <div className="md:text-4xl lg:text-5xl text-[28px] font-bold text-[#20B486]">
+              25<span className="text-[#20B486]">+</span>
             </div>
+            <p className="text-gray-900 font-medium text-sm leading-tight">
+              سنوات من الخبرة
+            </p>
+          </div>
 
-            {/* Cities */}
-            <div className="bg-white rounded-2xl p-8 w-full h-full flex items-center justify-center text-center flex-col">
-              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                24<span className="text-[#3E5EC0]">+</span>
-              </div>
-              <div className="text-sm text-[#6E6E6E]">مدينة</div>
+          {/* Participants Trained */}
+          <div className="text-center md:space-y-3 space-y-2">
+            <div className="md:text-4xl lg:text-5xl text-[28px] font-bold text-[#20B486]">
+              1000<span className="text-[#20B486]">+</span>
             </div>
+            <p className="text-gray-900 font-medium text-sm leading-tight">
+              مشارك مدرب
+              <br />
+              عبر الصناعات
+            </p>
+          </div>
 
-            {/* Happy Clients */}
-            <div className="bg-white rounded-2xl p-8 w-full h-full flex items-center justify-center text-center flex-col">
-              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                200<span className="text-[#3E5EC0]">+</span>
-              </div>
-              <div className="text-sm text-[#6E6E6E]">
-                عميل
-                <br />
-                سعيد
-              </div>
+          {/* Global Network */}
+          <div className="text-center md:space-y-3 space-y-2">
+            <div className="shrink-0">
+              <img
+                src="/assets/icons/achievement-icon.svg"
+                alt=""
+                className="w-10 h-10 mx-auto"
+              />
             </div>
+            <p className="text-gray-900 font-medium text-sm leading-tight">
+              شبكة عالمية من
+              <br />
+              المدربين المعتمدين دولياً
+            </p>
+          </div>
 
-            {/* On Going Projects */}
-            <div className="bg-white rounded-2xl p-8 w-full h-full flex items-center justify-center text-center flex-col">
-              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                100<span className="text-[#3E5EC0]">+</span>
-              </div>
-              <div className="text-sm text-[#6E6E6E]">
-                مشروع
-                <br />
-                جارٍ
-              </div>
+          {/* Specialized Training Programs */}
+          <div className="text-center md:space-y-3 space-y-2">
+            <div className="md:md:text-4xl lg:text-5xl text-[28px] font-bold text-[#20B486]">
+              1000<span className="text-[#20B486]">+</span>
             </div>
+            <p className="text-gray-900 font-medium text-sm leading-tight">
+              برامج تدريبية متخصصة
+              <br />
+              تم تقديمها
+            </p>
+          </div>
+
+          {/* International Cities */}
+          <div className="text-center md:space-y-3 space-y-2">
+            <div className="md:text-4xl lg:text-5xl text-[28px] font-bold text-[#20B486]">
+              15<span className="text-[#20B486]">+</span>
+            </div>
+            <p className="text-gray-900 font-medium text-sm leading-tight">
+              مدن وعواصم
+              <br />
+              دولية
+            </p>
           </div>
         </div>
       </Container>
