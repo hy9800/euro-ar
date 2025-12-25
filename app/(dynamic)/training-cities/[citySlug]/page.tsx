@@ -204,7 +204,7 @@ export default async function Page({
         <HeroBanner
           backgroundImage="/assets/images/hero-city.webp"
           title={city.h1 || city.title}
-          description={city.description}
+          description={city.description || `ابحث عن دورات تدريبية مهنية في ${city.title}`}
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
           typewriterSpeed={100}
