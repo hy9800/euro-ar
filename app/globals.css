@@ -21,12 +21,25 @@ body {
   font-family: var(--font-cairo), "Cairo", sans-serif !important;
 }
 
-h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+button,
+input,
+textarea,
+select {
   font-family: var(--font-cairo), "Cairo", sans-serif;
 }
 
 
-.bg-coverage{
+.bg-coverage {
   background-image: url("/assets/images/global-map2.png");
   background-position: right;
   background-repeat: no-repeat;
@@ -141,7 +154,8 @@ h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select {
   }
 }
 
-input , textarea{
+input,
+textarea {
   font-size: 14px !important;
 }
 
@@ -594,27 +608,27 @@ input , textarea{
   margin-top: 30px !important;
 }
 
-.overview-text strong {
-  color: #2c3e50;
-  font-weight: 600;
-  font-size: 18px;
-}
 
-/* Main section headings (Course Benefits, Course Objectives, etc.) */
-.overview-text p strong:only-child {
-  display: block;
-  margin: 32px 0 0 0;
-  font-size: 20px;
-  color: #3E5EC0;
-  padding-bottom: 0;
+.overview-text p strong:first-child:not(.unit-heading):not(.secondary-heading) {
+  color: #3e5ec0;
+  text-align: right;
   border-bottom: none;
+  margin: 20px 0 0;
+  padding-bottom: 0;
+  font-size: 20px;
+  display: block;
   position: relative;
-  text-align: start;
 }
 
-.overview-text .unit-heading {
+.overview-text p br {
+  display: none;
+}
+
+.overview-text .unit-heading,
+.overview-text p strong.unit-heading,
+.overview-text strong.unit-heading {
   font-size: 15px !important;
-  margin-block: 14px !important;
+  margin: 14px 0 !important;
   background: #F2F8FF !important;
   color: #2d3748 !important;
   padding: 12px 16px !important;
@@ -624,6 +638,10 @@ input , textarea{
   background-clip: unset !important;
   -webkit-background-clip: unset !important;
   position: relative;
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  font-weight: 600 !important;
 }
 
 .overview-text .unit-heading::after {
@@ -653,11 +671,6 @@ input , textarea{
 .overview-text .unit-heading:hover {
   background: #f0f4ff !important;
   transform: translateX(4px) !important;
-}
-
-/* Improve spacing and readability */
-.overview-text p {
-  line-height: 1.7;
 }
 
 .overview-text p strong:only-child+* {
