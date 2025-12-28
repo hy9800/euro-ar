@@ -17,7 +17,7 @@ export default function CoursesList({
         ))
       ) : (
         <div>
-          <p>No courses found matching your search criteria.</p>
+          <p>لم نتمكن من العثور على أي دورات تدريبية مطابقة لبحثك.</p>
         </div>
       )}
     </section>

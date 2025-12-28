@@ -28,10 +28,10 @@ export default function CityCategorySection({
     return (
       <Container className="py-8 text-center">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Category Not Found
+          لم نتمكن من العثور على الفئة
         </h2>
         <p className="text-gray-600">
-          The requested category could not be found in this city.
+          لم نتمكن من العثور على الفئة في هذه المدينة.
         </p>
       </Container>
     );

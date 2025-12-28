@@ -253,7 +253,6 @@ export default function DownloadPopup() {
           showErrorAlert("خطأ!", "فشل إنشاء PDF، ولكن تم إرسال طلبك بنجاح.");
         }
       } else {
-        // If no course/timing data, just show success
         showSuccessAlert("نجح!", "شكراً لك! سيبدأ تحميل البروشور قريباً.");
         setTimeout(() => {
           closeDownload();
