@@ -72,12 +72,11 @@ export default function Navbar() {
                 aria-label="الدول التدريبية العالمية - Return to homepage"
               >
                 <Image
-                  src="/assets/images/logo-ar.svg"
+                  src="./assets/images/logo-ar.svg"
                   alt="الدول التدريبية العالمية Training Logo"
                   width={190}
                   height={50}
                   className="lg:w-[190px] w-[160px] h-[65px] object-cover"
-                  priority
                   unoptimized
                 />
               </Link>
@@ -136,7 +135,7 @@ export default function Navbar() {
           <>
             {/* Backdrop Overlay */}
             <motion.div
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9998]"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-9998"
               onClick={closeSidebar}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -146,7 +145,7 @@ export default function Navbar() {
 
             {/* Main Sidebar Container */}
             <motion.div
-              className="fixed top-0 right-0 w-80 h-screen bg-gradient-to-br from-white to-slate-50 shadow-2xl z-[9999] flex flex-col border-l border-blue-200/20 sm:w-80 max-[480px]:w-full"
+              className="fixed top-0 right-0 w-80 h-screen bg-linear-to-br from-white to-slate-50 shadow-2xl z-9999 flex flex-col border-l border-blue-200/20 sm:w-80 max-[480px]:w-full"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -166,12 +165,11 @@ export default function Navbar() {
               >
                 <div className="flex items-center justify-between">
                   <Image
-                    src="/assets/images/logo-ar.svg"
+                    src="./assets/images/logo-ar.svg"
                     alt="الدول التدريبية العالمية Training Logo"
                     width={160}
                     height={50}
                     className="w-[160px] h-[50px] object-cover"
-                    priority
                     unoptimized
                   />
                   <motion.button
