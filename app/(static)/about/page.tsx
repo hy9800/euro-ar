@@ -11,6 +11,8 @@ import FutureOutlook from "./_components/future-outlook";
 import WhyEuroquest from "./_components/why-euroquest";
 import OurClients from "./_components/our-clients";
 import OurValues from "./_components/our-values";
+import OurImpact from "./_components/our-impact";
+import OurAchievements from "./_components/our-achievements";
 
 const breadcrumbs = [
   { label: "", href: "/", icon: <HomeIcon width={16} height={16} /> },
@@ -85,16 +87,16 @@ export default function AboutPage() {
       />
 
       <Container>
-        <div className="flex flex-col xl:flex-row gap-6 xl:gap-8 py-6 xl:py-8">
+        <div className="flex flex-col xl:flex-row gap-6 xl:gap-8 py-6 lg:py-8">
           <AboutNavigation />
           <div className="flex-1 min-w-0">
             <AboutSection />
             <VissionMission />
             <OurValues />
             <OurClients />
-            {/* <OurAchievements /> */}
+            <OurAchievements />
             <WhyEuroquest />
-            {/* <OurImpact /> */}
+            <OurImpact />
             <FutureOutlook />
           </div>
         </div>

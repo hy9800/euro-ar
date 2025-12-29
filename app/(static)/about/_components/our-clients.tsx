@@ -3,7 +3,7 @@ import React from "react";
 
 export default function OurClients() {
   return (
-    <section id="our-clients" className="bg-white md:py-10 py-6 scroll-mt-24">
+    <section id="our-clients" className="scroll-mt-24 md:my-14 my-10">
       <div className="flex flex-col gap-12 relative z-10">
         <div className="w-full">
           <SectionTitle title="عملاؤنا" highlight="" className="!mb-4" />
@@ -27,7 +27,7 @@ export default function OurClients() {
                   <img src="/assets/icons/client-icon1.svg" alt="" />
                 </div>
                 <span className="text-base font-semibold text-black">
-                  الوزارات الحكومية
+                   الوزارات و المؤسسات الحكومية
                 </span>
               </div>
 
@@ -37,7 +37,7 @@ export default function OurClients() {
                   <img src="/assets/icons/client-icon2.svg" alt="" />
                 </div>
                 <span className="text-base font-semibold text-black">
-                  منظمات النفط والطاقة
+                  شركات النفط والطاقة
                 </span>
               </div>
 
@@ -47,7 +47,7 @@ export default function OurClients() {
                   <img src="/assets/icons/client-icon3.svg" alt="" />
                 </div>
                 <span className="text-base font-semibold text-black">
-                  المؤسسات المالية
+                  البنوك والقطاع المالي
                 </span>
               </div>
 
@@ -57,7 +57,7 @@ export default function OurClients() {
                   <img src="/assets/icons/client-icon4.svg" alt="" />
                 </div>
                 <span className="text-base font-semibold text-black">
-                  شركات الاتصالات
+                  شركات الاتصالات والتكنولوجيا
                 </span>
               </div>
 
@@ -67,7 +67,7 @@ export default function OurClients() {
                   <img src="/assets/icons/client-icon5.svg" alt="" />
                 </div>
                 <span className="text-base font-semibold text-black">
-                  الهيئات التعليمية
+                  المؤسسات التعليمية
                 </span>
               </div>
 
@@ -77,7 +77,7 @@ export default function OurClients() {
                   <img src="/assets/icons/client-icon6.svg" alt="" />
                 </div>
                 <span className="text-base font-semibold text-black">
-                  الشركات متعددة الجنسيات الرائدة
+                  وكبرى الشركات العالمية
                 </span>
               </div>
             </div>

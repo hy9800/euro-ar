@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react";
 
 const sections = [
-  { id: "who-is-euroquest", label: "من هو يوروكويست ؟" },
+  { id: "who-is-euroquest", label: "عن يوركويست إنترناشيونال"},
   { id: "our-vision", label: "رؤيتنا" },
-  { id: "our-mission", label: "مهمتنا" },
+  { id: "our-mission", label: "رسالتنا" },
   { id: "our-values", label: "قيمنا" },
   { id: "our-clients", label: "عملاؤنا" },
-  // { id: "our-achievements", label: "إنجازاتنا" },
+  { id: "our-achievements", label: "أبرز إنجازاتنا" },
   { id: "why-euroquest", label: "لماذا يوروكويست ؟" },
-  // { id: "our-impact", label: "تأثيرنا" },
+  { id: "our-impact", label: "أثرنا" },
   { id: "future-outlook", label: "النظرة المستقبلية" },
 ];
 
@@ -61,7 +61,7 @@ export default function AboutNavigation() {
   };
 
   return (
-    <aside className="hidden xl:block w-full max-w-[180px] shrink-0">
+    <aside className="hidden xl:block w-full max-w-[220px] shrink-0">
       <div className="sticky top-24">
         <nav className="space-y-2">
           {sections.map((section) => (

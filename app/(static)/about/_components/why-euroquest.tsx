@@ -1,27 +1,51 @@
-import Container from "@/components/shared/container";
-import React from "react";
 
 export default function WhyEuroquest() {
   return (
-    <section id="why-euroquest" className="bg-white md:py-10 py-6 scroll-mt-24">
+    <section id="why-euroquest" className="md:my-14 my-10 scroll-mt-24">
       <div className="flex flex-col gap-12 relative z-10">
         <div className="w-full">
-          <div className="flex flex-col lg:flex-row md:gap-6 gap-4 items-center lg:items-start">
+          <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
             {/* Left Side - Question Mark Icon */}
-            <div className="w-full lg:w-3/4 text-center lg:text-right">
+            <div className="w-full lg:w-3/4 flex flex-col gap-4">
               <h2 className="text-xl md:text-2xl font-bold mb-2">
-                لماذا تختار <span className="text-[#3E5EC0]">يوروكويست ؟</span>
+               لماذا يوروكويست
+                إنترناشيونال ؟
               </h2>
-              <p className="font-normal text-sm md:text-base leading-7">
-                برامج تغطي{" "}
-                <span className="font-semibold">أكثر من 20 فئة تدريبية</span>{" "}
-                منهجيات تجمع بين النظرية والتطبيق حلول مخصصة للمنظمات والأفراد
-                وجود عالمي في مدن مثل دبي، لندن، برشلونة، إسطنبول، فيينا، باريس،
-                جنيف، والمزيد تركيز قوي على المواضيع الناشئة مثل{" "}
-                <span className="font-semibold">
-                  الذكاء الاصطناعي، الاستدامة، والتحول الرقمي
-                </span>
-              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3 md:gap-4">
+                  <div className="flex-shrink-0 w-2 h-2 bg-black rounded-full md:mt-[9px]"></div>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    برامج تغطي أكثر من 20 تخصصًا تدريبيًا
+                  </p>
+                </li>
+
+                <li className="flex items-start gap-3 md:gap-4">
+                  <div className="flex-shrink-0 w-2 h-2 bg-black rounded-full md:mt-[9px]"></div>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    منهجيات عملية تربط النظرية بالتطبيق
+                  </p>
+                </li>
+                <li className="flex items-start gap-3 md:gap-4">
+                  <div className="flex-shrink-0 w-2 h-2 bg-black rounded-full md:mt-[9px]"></div>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    برامج قابلة للتخصيص وفق احتياجات المؤسسات
+                  </p>
+                </li>
+                <li className="flex items-start gap-3 md:gap-4">
+                  <div className="flex-shrink-0 w-2 h-2 bg-black rounded-full md:mt-[9px]"></div>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    حضور دولي في مدن مثل دبي، لندن، برشلونة، إسطنبول، فيينا،
+                    باريس، جنيف وغيرها
+                  </p>
+                </li>
+                <li className="flex items-start gap-3 md:gap-4">
+                  <div className="flex-shrink-0 w-2 h-2 bg-black rounded-full md:mt-[9px]"></div>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    تركيز على الموضوعات الحديثة مثل الذكاء الاصطناعي، الاستدامة،
+                    والتحولات الرقمية
+                  </p>
+                </li>
+              </ul>
             </div>
 
             {/* Right Side - Content */}
@@ -35,48 +59,6 @@ export default function WhyEuroquest() {
               </div>
             </div>
           </div>
-          <section className="bg-[#F8FBFF] md:py-11 py-8 mt-4">
-            <Container className="flex flex-col gap-14 relative z-10">
-              <div className="w-full">
-                {/* <SectionTitle title="Our" highlight="Impact" className="!mb-8" /> */}
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="flex flex-col items-center text-center gap-3">
-                    <img
-                      src="/assets/icons/check.svg"
-                      alt=""
-                      className="w-12 h-12"
-                    />
-                    <h3 className="text-base font-semibold text-black mb-2">
-                      تحسين كفاءة القوى العاملة في المنظمات
-                    </h3>
-                  </div>
-
-                  <div className="flex flex-col items-center text-center gap-3">
-                    <img
-                      src="/assets/icons/check.svg"
-                      alt=""
-                      className="w-12 h-12"
-                    />
-                    <h3 className="text-base font-semibold text-black mb-2">
-                      اكتساب المهنيين للمهارات اللازمة للتقدم الوظيفي
-                    </h3>
-                  </div>
-
-                  <div className="flex flex-col items-center text-center gap-3">
-                    <img
-                      src="/assets/icons/check.svg"
-                      alt=""
-                      className="w-12 h-12"
-                    />
-                    <h3 className="text-base font-semibold text-black mb-2">
-                      تحقيق الفرق للتعاون والنتائج الأفضل
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            </Container>
-          </section>
         </div>
       </div>
     </section>
